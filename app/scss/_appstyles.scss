@@ -2,6 +2,10 @@ p {
   font-size: inherit;
 }
 
+.row {
+  max-width: inherit;
+}
+
 .header {
   color: $brand-primary;
 
@@ -26,6 +30,8 @@ p {
 
 .jumbotron {
   .btns {
+    text-align: center;
+
     .btn {
       margin: 0 auto;
     }
@@ -33,6 +39,24 @@ p {
 
   p {
     font-size: inherit;
+  }
+}
+
+
+.laptop-bg {
+  width: 1250px;
+  height: 756px;
+  background: url(../images/laptop.png) center no-repeat;
+  background-size: contain;
+  padding-top: 69px;
+  padding-left: 171px;
+  position: relative;
+
+  .laptop-inner {
+    width: 908px;
+    height: 569px;
+    background: url(../images/mockup.jpg) center top no-repeat;
+    background-size: cover;
   }
 }
 
@@ -50,6 +74,22 @@ p {
     height: 680px;
   }
 }
+
+.ipad-bg {
+  width: 1270px;
+  height: 880px;
+  max-width: 100%;
+  background: url(../images/ipad.png) center no-repeat;
+  background-size: contain;
+  padding-top: 105px;
+  padding-left: 109px;
+
+  iframe {
+    width: 894px;
+    height: 670px;
+  }
+}
+
 
 iframe {
   overflow-y: scroll;

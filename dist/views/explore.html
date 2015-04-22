@@ -5,13 +5,13 @@
 <div class="jumbotron">
   <div class="container">
 
-      <div class="col-md-5">
-        <h4 class="text-center">Try it out</h4>
-        <div class="iphone-bg">
-          <iframe ng-src="{{trustSrc(url)}}"></iframe>
-        </div>
+    <div class="container" ng-bind-html="node.body.value"></div>
+    <div class="container">
+      <h4 class="text-center">Try it out</h4>
+      <div class="ipad-bg">
+        <iframe ng-src="{{trustSrc(url)}}"></iframe>
       </div>
-      <div class="col-md-7" ng-bind-html="node.body.value"></div>
+    </div>
 
   </div>
 </div>

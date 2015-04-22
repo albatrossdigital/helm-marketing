@@ -12,7 +12,7 @@ angular.module('app')
       $stateProvider
         
         .state("home", {
-          url: '/home',
+          url: '/',
           resolve: {
             links: function($stateParams, MenuLink) {
               return MenuLink.query().$promise.then(function(data) {
@@ -33,6 +33,7 @@ angular.module('app')
           }
         })
 
+
         .state("mytown", {
           url: '/mytown',
           resolve: {
@@ -45,8 +46,29 @@ angular.module('app')
           templateUrl: 'views/mytown.html',
           controller: function($scope, $rootScope, $state, $filter, $sce, node){
             $scope.node = node;
-            $scope.myTownUrl = $rootScope.myTownUrl;
-                        console.log($scope.node);
+            $scope.url = $rootScope.myTownUrl;
+
+            $scope.trustSrc = function(src) {
+              return $sce.trustAsResourceUrl(src);
+            }
+
+          }
+        })
+
+
+        .state("explore", {
+          url: '/explore',
+          resolve: {
+            node: function($stateParams, Node) {
+              return Node.get({nid: 15}).$promise.then(function(data) {
+                return data;
+              });
+            }
+          },
+          templateUrl: 'views/explore.html',
+          controller: function($scope, $rootScope, $state, $filter, $sce, node){
+            $scope.node = node;
+            $scope.url = $rootScope.exploreUrl;
 
             $scope.trustSrc = function(src) {
               return $sce.trustAsResourceUrl(src);

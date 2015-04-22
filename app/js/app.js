@@ -136,7 +136,7 @@ angular.module('app', [
       metaInfoProvider.setBaseKeywords('FILLME!');
 
       // set location provider as regular urls
-      //$locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(true);
 
       // trailing slash and url re-rerouting
       /*$urlRouterProvider.rule(function ($injector, $location) {
