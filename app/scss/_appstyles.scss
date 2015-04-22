@@ -1,3 +1,7 @@
+p {
+  font-size: inherit;
+}
+
 .header {
   color: $brand-primary;
 
@@ -26,6 +30,10 @@
       margin: 0 auto;
     }
   }
+
+  p {
+    font-size: inherit;
+  }
 }
 
 
@@ -49,3 +57,20 @@ iframe {
   border: none;
   background-color: white;
 }
+
+.contact-line {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+/*.features {
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+  }
+}*/

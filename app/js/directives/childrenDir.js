@@ -4,7 +4,7 @@ angular.module('app.children', [
   'drupalService'
 ])
 
-.directive('children', function factory($window, $browser, $filter, Node, File) {
+.directive('children', function factory($window, $browser, $filter, Node) {
   return {
     restrict: 'E',
     template : '<div class="block block-children" ng-class="{loading: \'loading\'}" ng-include="getTemplate();"></div>',
@@ -13,6 +13,7 @@ angular.module('app.children', [
       parentLink: '=',
       allLinks: '=links',
       allNodes: '=nodes',
+      apiUrl: '@'
     },
     link: function($scope, $rootScope, $element, $attrs) {
       $scope.loading = true;
@@ -28,15 +29,6 @@ angular.module('app.children', [
 
       angular.forEach(menuLinks, function(item, key) {
         var node = getNode(item.nid);
-        angular.forEach(node, function(field, key) {
-          if (field != undefined && field != null && field.file != undefined) {
-            File.query({fid: field.file.id}).$promise.then(function(data) {
-              console.log(data);
-              return data.list;
-            });
-          }
-        });
-
         $scope.nodes.push(node);
       });
 
@@ -48,7 +40,9 @@ angular.module('app.children', [
         return "/views/block/" + name + ".html";
       }
 
-      
+      $scope.extractPath = function(url) {
+        return url.replace($scope.apiUrl, '');
+      }   
 
     }
   }

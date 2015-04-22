@@ -10,6 +10,7 @@ angular.module('app', [
   'drupalService',
   'ui.router',
   'app.children',
+  'drupalImage',
   'metaInfo',
   'ngSanitize',
   //'ngAnimate',  // @todo: This was causing an error with the loading of templates in childrenDir.js ($scope.getTemplate)

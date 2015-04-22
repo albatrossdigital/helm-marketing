@@ -43,10 +43,14 @@ angular.module('app')
             }
           },
           templateUrl: 'views/mytown.html',
-          controller: function($scope, $rootScope, $state, $filter, node){
+          controller: function($scope, $rootScope, $state, $filter, $sce, node){
             $scope.node = node;
             $scope.myTownUrl = $rootScope.myTownUrl;
                         console.log($scope.node);
+
+            $scope.trustSrc = function(src) {
+              return $sce.trustAsResourceUrl(src);
+            }
 
           }
         })

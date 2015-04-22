@@ -7,13 +7,22 @@
 
       <div class="col-md-5">
         <div class="iphone-bg">
-          <iframe src="{{myTownUrl}}"></iframe>
+          <iframe ng-src="{{trustSrc(myTownUrl)}}"></iframe>
         </div>
       </div>
       <div class="col-md-7" ng-bind-html="node.body.value"></div>
 
   </div>
 </div>
+
+<div class="container">
+  <h3 class="contact-line">Contact us at <a href="mailto:hello@helmcivic.com">hello@helmcivic.com</a> for more information, a customized demo, and pricing.</h3>
+</div>
+
+<div class="container">
+  <img src="http://placehold.it/1600x900&text=Video" width="1200" />
+</div>
+
 
 
 
