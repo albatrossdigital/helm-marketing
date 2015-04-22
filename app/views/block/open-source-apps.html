@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>{{node.title}}</h2>
+  <p ng-bind-html="node.body.value"></p>
+  <div class="col-md-3" ng-repeat="node in nodes">
+    <div style="width:80px;height:80px;background:#ccc;border-radius:40px;"></div>
+    <h4>{{node.title}}</h4>
+    <p ng-bind-html="node.body.value"></p>
+  </div>
+</div>

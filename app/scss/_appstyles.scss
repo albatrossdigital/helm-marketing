@@ -1,0 +1,51 @@
+.header {
+  color: $brand-primary;
+
+  .logo {
+    display: block;
+    padding-top: 1.875rem;
+    padding-bottom: .75rem;
+    //float: left;
+    //margin-right: 20px;
+
+    &:before {
+      font-family: $ff-logo;
+      content: "\e600";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: $logo-size;
+    }
+
+  }
+}
+
+
+.jumbotron {
+  .btns {
+    .btn {
+      margin: 0 auto;
+    }
+  }
+}
+
+
+.iphone-bg {
+  width: 450px;
+  height: 940px;
+  background: url(../images/iphone-silver-cropped.png) center no-repeat;
+  background-size: contain;
+  padding-top: 133px;
+  padding-left: 33px;
+
+  iframe {
+    width: 390px;
+    height: 680px;
+  }
+}
+
+iframe {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: none;
+  background-color: white;
+}
