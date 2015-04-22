@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" ng-app="siteApp">
+<html class="no-js" lang="en" ng-app="app">
   <head ng-controller="metaInfoCtrl">
     <meta charset="utf-8">
     <base href="/" />
@@ -24,21 +24,15 @@
 
         ga('create', 'FILLME!', 'auto');
     </script>
-    <script>
-        appUrl='';
-        Drupal = {};
-        Drupal.settings = {};
-        Drupal.settings.liftoff_auth_site = {};
-        Drupal.settings.liftoff_auth_site.api_path = 'http://auth.liftoff.albatrossdigital.com/';
-        Drupal.settings.liftoff_auth_site.uid = 1;
-        Drupal.settings.liftoff_auth_site.page_path = '/';
-    </script>
   </head>
   <body page-ready>
 
+    <div class="container header">
+        <a href="/" class="logo"></a>
+        <h1>Helm Civic</h1>
+    </div>
 
-
-<main ui-view></main>
+    <main ui-view></main>
 
     
     <script src="js/angular.min.js"></script>

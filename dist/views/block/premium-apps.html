@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>{{node.title}}</h2>
+  <p ng-bind-html="node.body.value"></p>
+  <div class="col-md-6" ng-repeat="node in nodes">
+    <h3>{{node.title}}</h3>
+    <p ng-bind-html="node.body.summary"></p>
+    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+  </div>
+</div>
