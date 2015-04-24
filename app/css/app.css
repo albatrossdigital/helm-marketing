@@ -4709,7 +4709,8 @@ p {
   padding-left: 109px; }
   .ipad-bg iframe {
     width: 894px;
-    height: 670px; }
+    height: 670px;
+    overflow-y: hidden; }
 
 iframe {
   overflow-y: scroll;
