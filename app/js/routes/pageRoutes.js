@@ -33,36 +33,23 @@ angular.module('app')
           }
         })
 
-        .state("home.modal", {
-          url: "/modal/:nid",
-          onEnter: 
-          ['$stateParams', '$state', '$modal', '$resource', 'Node', '$promise', 
-          function($stateParams, $state, $modal, $resource, Node, $promise) {
-            alert('asdf');
-            $modal.open({
-              templateUrl: "views/modal.html",
-              resolve: {
-                node: function($stateParams, Node) {
-                  return Node.get($stateParams.nid).$promise.then(function(data) {
-                    return data;
-                  });
-                }
-              },
-              controller: ['$scope', 'node', function($scope, node) {
-                $scope.dismiss = function() {
-                  $scope.$dismiss();
-                };
+        .state("app", {
+         url: '/app/:nid',
+         resolve: {
+            node: function($stateParams, Node) {
+              return Node.get({nid: $stateParams.nid}).$promise.then(function(data) {
+                return data;
+              });
+            }
+          },
+          templateUrl: 'views/app.html',
+          controller: function($scope, $rootScope, $state, $filter, $sce, node){
+            $scope.node = node;
 
-                $scope.save = function() {
-                  item.update().then(function() {
-                    $scope.$close(true);
-                  });
-                };
-              }]
-            }).result.finally(function() {
-              $state.go('^');
-            });
-          }]
+            $scope.appGo = function(params) {
+              $state.go('app', params);
+            }
+          }
         })
 
 

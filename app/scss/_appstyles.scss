@@ -74,6 +74,7 @@ dl, ol, ul {
     .border {
       border: 4px solid #ccc;
       margin-top: 50px;
+      border-color: $brand-primary !important;
     }
 
     i {
@@ -87,13 +88,17 @@ dl, ol, ul {
       line-height: 40px;
       text-align: center;
       margin: 0px auto;
+      color: $brand-primary !important;
     }
+
     
   }
 }
 
 .apps {
+
   .icon-wrapper {
+    padding-top: 40px;
     text-align: center;
   }
 
