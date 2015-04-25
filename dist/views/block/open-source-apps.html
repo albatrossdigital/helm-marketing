@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container apps">
   <h2>{{node.title}}</h2>
   <p ng-bind-html="node.body.value"></p>
-  <div class="col-md-3" ng-repeat="node in nodes">
-    <div style="width:80px;height:80px;background:#ccc;border-radius:40px;"></div>
+  <div class="col-md-3 icon-wrapper" ng-repeat="node in nodes">
+    <div class="app-icon" style="background-color: {{node.field_icon.color}};"><i class="fa {{node.field_icon.icon}}"></i></div>
     <h4>{{node.title}}</h4>
     <p ng-bind-html="node.body.value"></p>
   </div>

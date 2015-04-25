@@ -1,20 +1,42 @@
+main {
+  min-height: 100%;
+}
+
 p {
   font-size: inherit;
+}
+
+dl, ol, ul {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
 .row {
   max-width: inherit;
 }
 
+
+
 .header {
   color: $brand-primary;
+
+  h1 {
+    color: $brand-primary;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: 28px;
+  }
 
   .logo {
     display: block;
     padding-top: 1.875rem;
     padding-bottom: .75rem;
-    //float: left;
-    //margin-right: 20px;
+    float: left;
+    margin-top: 39px;
+    margin-right: 20px;
+    padding-top: 0;
 
     &:before {
       font-family: $ff-logo;
@@ -41,6 +63,53 @@ p {
     font-size: inherit;
   }
 }
+
+
+.features {
+
+  .feature-icon {
+    width: 100%;
+    position: relative;
+    
+    .border {
+      border: 4px solid #ccc;
+      margin-top: 50px;
+    }
+
+    i {
+      position: absolute;
+      top: -20px;
+      left: 15%;
+      width: 60px;
+      height: 40px;
+      background: #fff;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin: 0px auto;
+    }
+    
+  }
+}
+
+.apps {
+  .icon-wrapper {
+    text-align: center;
+  }
+
+  .app-icon {
+    width:80px;
+    height:80px;
+    background:#ccc;
+    border-radius: 20px;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+    margin: 0px auto;
+  }
+}
+
 
 
 .laptop-bg {

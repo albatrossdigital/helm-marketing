@@ -66,7 +66,7 @@ angular.module('drupalService', ['ngResource'])
 
 
   .factory('File', ['$resource', '$rootScope', function ($resource, $rootScope) {
-    return $resource($rootScope.apiUrl + 'file/:fid', 
+    return $resource($rootScope.apiUrl + 'file/:fid.json', 
       { 'fid': '@fid' },
       {
         query: {
