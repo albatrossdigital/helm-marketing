@@ -2,13 +2,26 @@ main {
   min-height: 100%;
 }
 
-p {
+p,
+label {
   font-size: inherit;
+}
+
+input,
+select {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  height: inherit !important;
 }
 
 dl, ol, ul {
   font-size: $font-size-base;
   line-height: $line-height-base;
+  margin-left: 1.5em;
+
+  li p {
+    margin-bottom: 0 !important;
+  }
 }
 
 .row {
@@ -27,6 +40,7 @@ dl, ol, ul {
 
   h1 {
     color: $brand-primary;
+    margin-bottom: 0;
   }
 
   h2,
@@ -54,20 +68,6 @@ dl, ol, ul {
   }
 }
 
-
-.jumbotron {
-  .btns {
-    text-align: center;
-
-    .btn {
-      margin: 0 auto;
-    }
-  }
-
-  p {
-    font-size: inherit;
-  }
-}
 
 
 .features {
@@ -104,11 +104,75 @@ dl, ol, ul {
   margin-top: 40px;
 }
 
+.gray-bg.btns {
+  margin-top: 1em;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid $gray-lightish;
+
+  .btn {
+    margin: 0 auto;
+    @include button-variant($white, $gray-dark, $gray-darker);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    border-radius: 4px;
+    font-family: $ff-primary;
+    font-weight: bold;
+
+    &.btn-primary {
+      @include button-variant($white, $brand-primary, darken($brand-primary, 13.5%));
+    }
+  }
+}
+
+.jumbotron {
+  p {
+    font-size: inherit;
+  }
+}
+
+
+.gray-bg{
+  background: $gray-lightest;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.gray-dark-bg {
+  background: $gray-lighter;
+}
+
+.premium-apps {
+  .well {
+    background-color: #fff;
+    margin-top: .5em;
+    cursor: pointer;
+  }
+
+  img {
+    margin-top: 10px;
+  }
+}
+
+
+.mailing-list {
+  padding-bottom: 20px;
+
+  .form-inline .form-control {
+    margin-top: 10px;
+
+    input[type="submit"] {
+      border-radius: 4px !important;
+    }
+  }
+}
+
 .apps {
 
   .icon-wrapper {
     padding-top: 40px;
     text-align: center;
+    cursor: pointer;
   }
 
   .app-icon {

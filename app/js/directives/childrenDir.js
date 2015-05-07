@@ -42,7 +42,11 @@ angular.module('app.children', [
 
       $scope.extractPath = function(url) {
         return url.replace($scope.apiUrl, '');
-      }   
+      }
+
+      $scope.go = function(state, params) {
+        $scope.$root.$state.go(state, params);
+      }
 
     }
   }

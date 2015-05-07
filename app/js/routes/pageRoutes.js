@@ -45,10 +45,6 @@ angular.module('app')
           templateUrl: 'views/app.html',
           controller: function($scope, $rootScope, $state, $filter, $sce, node){
             $scope.node = node;
-
-            $scope.appGo = function(params) {
-              $state.go('app', params);
-            }
           }
         })
 
