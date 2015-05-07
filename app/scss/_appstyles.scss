@@ -108,7 +108,6 @@ dl, ol, ul {
   margin-top: 1em;
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid $gray-lightish;
 
   .btn {
     margin: 0 auto;
@@ -126,6 +125,8 @@ dl, ol, ul {
 }
 
 .jumbotron {
+  padding-top: 0;
+
   p {
     font-size: inherit;
   }
@@ -140,6 +141,10 @@ dl, ol, ul {
 
 .gray-dark-bg {
   background: $gray-lighter;
+}
+
+.gray-border {
+  border-bottom: 1px solid $gray-lightish;
 }
 
 .premium-apps {
