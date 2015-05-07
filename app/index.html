@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="bower_components/afkl-lazy-image/release/lazy-image-style.css">
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css css/app.min.css -->
@@ -38,7 +40,7 @@
 
     <div class="container header">
         <a href="/" class="logo"></a>
-        <h1>Helm Civic</h1>
+        <h1><a href="/">Helm Civic</a></h1>
     </div>
 
     <main ui-view></main>
@@ -86,14 +88,18 @@
     <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
     <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="bower_components/angular-inview/angular-inview.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
     <!-- build:js js/app.min.js -->
     <script src="js/app.js"></script>
     <!-- Utilities -->
     <!-- Routes -->
     <script src="js/routes/pageRoutes.js"></script>
+    <script src="js/routes/siteRoutes.js"></script>
     <!-- Providers -->
     <script src="js/providers/metaInfo.js"></script>
     <script src="js/providers/drupalService.js"></script>

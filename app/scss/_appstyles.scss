@@ -20,6 +20,11 @@ dl, ol, ul {
 .header {
   color: $brand-primary;
 
+  a:hover {
+    //color: $brand-primary !important;
+    text-decoration: none !important;
+  }
+
   h1 {
     color: $brand-primary;
   }
@@ -93,6 +98,10 @@ dl, ol, ul {
 
     
   }
+}
+
+.btn-home{
+  margin-top: 40px;
 }
 
 .apps {

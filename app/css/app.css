@@ -4663,6 +4663,8 @@ dl, ol, ul {
 
 .header {
   color: #840000; }
+  .header a:hover {
+    text-decoration: none !important; }
   .header h1 {
     color: #840000; }
   .header h2, .header h3 {
@@ -4708,6 +4710,9 @@ dl, ol, ul {
     text-align: center;
     margin: 0px auto;
     color: #840000 !important; }
+
+.btn-home {
+  margin-top: 40px; }
 
 .apps .icon-wrapper {
   padding-top: 40px;

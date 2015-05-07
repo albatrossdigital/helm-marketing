@@ -10,12 +10,14 @@ angular.module('app', [
   'drupalService',
   'ui.router',
   'app.children',
+  'app.site',
   'drupalImage',
   'metaInfo',
   'ngSanitize',
   //'ngAnimate',  // @todo: This was causing an error with the loading of templates in childrenDir.js ($scope.getTemplate)
   'ngTouch',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'google.places'
 ])
 
 .run(
@@ -28,6 +30,9 @@ angular.module('app', [
 
       //$rootScope.pageUrl = 'http://localhost:9000';
       $rootScope.apiUrl = 'http://helm-marketing.liftoff.albatrossdigital.com/';
+      $rootScope.siteApiUrl = 'http://auth.liftoff.albatrossdigital.com/';
+      
+
       //$rootScope.apiUrl = 'http://liftoff3.local/';
       $rootScope.myTownUrl = 'http://mytown.helmcivic.com';
       $rootScope.exploreUrl = 'http://explore.helmcivic.com';
