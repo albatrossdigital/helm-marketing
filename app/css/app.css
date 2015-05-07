@@ -4729,8 +4729,8 @@ dl, ol, ul {
     text-transform: uppercase;
     font-size: 1.2em;
     border-radius: 4px;
-    font-family: 'founders-text';
-    font-weight: bold; }
+    font-family: 'founders';
+    min-width: 230px; }
     .gray-bg.btns .btn:hover, .gray-bg.btns .btn:focus, .gray-bg.btns .btn.focus, .gray-bg.btns .btn:active, .gray-bg.btns .btn.active, .open > .gray-bg.btns .btn.dropdown-toggle {
       color: #fff;
       background-color: #1a1a1a;
