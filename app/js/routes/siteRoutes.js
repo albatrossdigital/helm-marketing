@@ -14,7 +14,7 @@ angular.module('app.site', [
         .state("create", {
           url: '/new',
           templateUrl: 'views/sites/create.html',
-          controller: function($scope, $rootScope, $state, $filter, $http){
+          controller: function($scope, $rootScope, $state, $filter, $http, Node){
 
             // Get token
             // @todo: move this into service
@@ -59,37 +59,33 @@ angular.module('app.site', [
 
               //data we need: profile&name&email&title&machine_name&lat&lng
               $scope.activeLink = mlid;
-              var data = {
+              var params = {
+                key: $rootScope.siteApiKey,
                 type: 'site',
                 sitename: $scope.name,
                 machine_name: $scope.machineName,
                 email: $scope.mail,
-                name: $scope.mail,
                 profile: $scope.profile,
                 lat: $scope.location.geometry != undefined ? $scope.location.geometry.location.A : null,
                 lng: $scope.location.geometry != undefined ? $scope.location.geometry.location.F : null,
               };
-              console.log(data);
-              // Save via $resource
-              // @todo: make this work (issues with $rootScope.token not being set in service)
-              //var site = new Node(data);
-              //site.$save();
 
-              console.log($scope);
-              return;
               // Save inline
-              $http({
-                url: $rootScope.siteCreate + 'api/create',
-                dataType: 'json',
-                method: 'POST',
-                data: data,
-                headers: { 
-                  'X-CSRF-Token': $rootScope.token,
-                  'Content-Type': 'application/json'
-                }
-              }).success(function(data) {
-                $state.go('sites');
+              $http.get($rootScope.siteApiUrl + 'api/create?'+serialize(params)).success(function(data) {
+                $state.go('thanks');
+              }).error(function(data) {
+                console.log(data);
+                alert('Oops, we ran into an issues. Please contact hello@helmcivic.com and we\'ll get you set up ASAP.');
               });
+            }
+
+            var serialize = function(obj) {
+              var str = [];
+              for(var p in obj)
+                if (obj.hasOwnProperty(p)) {
+                  str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+              return str.join("&");
             }
           }
         })

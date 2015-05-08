@@ -1,10 +1,12 @@
 <div class="gray-bg premium-apps"><div class="container">
   <h2>{{node.title}}</h2>
   <p ng-bind-html="node.body.value"></p>
-  <div class="col-md-6 premium-app-teaser" ng-repeat="node in nodes" ng-click="go(extractPath(node.url))"><div class="well">
-    <h3><a ng-href="{{extractPath(node.url)}}" href="">{{node.title}}</a></h3>
-    <a class="btn btn-sm btn-default pull-right" ng-href="{{extractPath(node.url)}}" href="" role="button">Learn more &raquo;</a>
-    <p ng-bind-html="node.body.summary"></p>
-    <a ng-href="{{extractPath(node.url)}}" href=""><img drupal-image-id="{{node.field_media.file.id}}" drupal-image-style="large" /></a>
-  </div></div>
+  <div class="row">
+    <div class="col-md-6 premium-app-teaser" ng-repeat="node in nodes" ng-click="go(extractPath(node.url))"><div class="well">
+      <h3><a ng-href="{{extractPath(node.url)}}" href="">{{node.title}}</a></h3>
+      <a class="btn btn-sm btn-default pull-right" ng-href="{{extractPath(node.url)}}" href="" role="button">Learn more &raquo;</a>
+      <p ng-bind-html="node.body.summary"></p>
+      <a ng-href="{{extractPath(node.url)}}" href=""><img drupal-image-id="{{node.field_media.file.id}}" drupal-image-style="large" /></a>
+    </div></div>
+  </div>
 </div></div>

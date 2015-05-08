@@ -31,6 +31,7 @@ angular.module('app', [
       //$rootScope.pageUrl = 'http://localhost:9000';
       $rootScope.apiUrl = 'http://helm-marketing.liftoff.albatrossdigital.com/';
       $rootScope.siteApiUrl = 'http://auth.liftoff.albatrossdigital.com/';
+      $rootScope.siteApiKey = 'eL92a6GsS0pAQ5lzcxSEg8lGhYwAheoB';
       
 
       //$rootScope.apiUrl = 'http://liftoff3.local/';
