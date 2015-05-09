@@ -428,6 +428,10 @@ iframe {
   // My town + explore iframes
   // -------------------------------------
 
+  .text-center .visible-xs-inline-block {
+    margin-bottom: 30px;
+  }
+
   .iphone-bg {
     display: none;
   }
@@ -609,5 +613,11 @@ iframe {
       background: #fff;
       background-size: cover;
     }
+  }
+
+  // My town + explore iframes
+  // -------------------------------------
+  .jumbotron .col-md-7 .well {
+    margin-top: 50px;
   }
 }

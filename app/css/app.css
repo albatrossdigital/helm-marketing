@@ -5214,6 +5214,8 @@ iframe {
     margin-top: -50px; }
   .mailing-list .form-inline .form-control {
     margin-bottom: 10px; }
+  .text-center .visible-xs-inline-block {
+    margin-bottom: 30px; }
   .iphone-bg {
     display: none; }
   .ipad-bg {
@@ -5293,4 +5295,6 @@ iframe {
       width: 730px;
       height: 451px;
       background: #fff;
-      background-size: cover; } }
+      background-size: cover; }
+  .jumbotron .col-md-7 .well {
+    margin-top: 50px; } }
