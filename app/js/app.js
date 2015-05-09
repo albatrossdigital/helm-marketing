@@ -17,12 +17,13 @@ angular.module('app', [
   //'ngAnimate',  // @todo: This was causing an error with the loading of templates in childrenDir.js ($scope.getTemplate)
   'ngTouch',
   'ui.bootstrap',
-  'google.places'
+  'google.places',
+  'scrollTo'
 ])
 
 .run(
-  [          '$rootScope', '$state', '$stateParams', 'metaInfo', '$window', '$location', 
-    function ($rootScope,   $state,   $stateParams,   metaInfo,   $window,   $location) {
+  [          '$rootScope', '$state', '$stateParams', '$sce', 'metaInfo', '$window', '$location', 
+    function ($rootScope,   $state,   $stateParams,   $sce,   metaInfo,   $window,   $location) {
 
 			// It's very handy to add references to $state and $stateParams to the $rootScope
 			$rootScope.$state = $state;
@@ -108,7 +109,7 @@ angular.module('app', [
           if(  fromState.name && fromState.name.length
             && (!toState.data  || !(toState.data && toState.data.skipScroll))) {
 
-            //$rootScope.scrollTo('main');
+            $rootScope.scrollTo('header');
           }
         }
       );
@@ -128,6 +129,11 @@ angular.module('app', [
         }
         $state.go(stateName);
       }
+
+      $rootScope.trustedBody = function(value) {
+        return $sce.trustAsHtml(value);
+      }
+
 		
 		}
 	]
@@ -138,31 +144,31 @@ angular.module('app', [
     function ($locationProvider,   $stateProvider,   $urlRouterProvider,   metaInfoProvider) {
 
       // Set base meta info
-      metaInfoProvider.setBaseTitle('FILLME!');
-      metaInfoProvider.setBaseDescription('FILLME!');
-      metaInfoProvider.setBaseKeywords('FILLME!');
+      metaInfoProvider.setBaseTitle('Helm Civic');
+      metaInfoProvider.setBaseDescription('Citizens come to your website to get stuff done. Help them.');
+      metaInfoProvider.setBaseKeywords('Drupal, government, cities, citizens, distribution, Albatross Digital');
 
       // set location provider as regular urls
       $locationProvider.html5Mode(true);
 
       // trailing slash and url re-rerouting
-      /*$urlRouterProvider.rule(function ($injector, $location) {
-        var path = $location.url();
+      // $urlRouterProvider.rule(function ($injector, $location) {
+      //   var path = $location.url();
 
-        var argPos = path.indexOf('/?');
+      //   var argPos = path.indexOf('/?');
 
-        // check to see if the path already has a slash where it should be
-        if (path.length > 1) {
-          if(path[path.length - 1] === '/') {
-            return path.substring(0, path.length - 1);
-          }
-          else if(argPos > 0) {
-            return path.replace('/?', '?');
-          }
+      //   // check to see if the path already has a slash where it should be
+      //   if (path.length > 1) {
+      //     if(path[path.length - 1] === '/') {
+      //       return path.substring(0, path.length - 1);
+      //     }
+      //     else if(argPos > 0) {
+      //       return path.replace('/?', '?');
+      //     }
 
-          return '/';
-        }
-      });*/
+      //     return '/';
+      //   }
+      // });
 
       //////////////////////////
       // State Configurations //

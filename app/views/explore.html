@@ -1,14 +1,22 @@
-<div class="container">
-  <a href="/" class="btn btn-default btn-sm right btn-home">&laquo; Back Home</a>
+<div class="container heading">
   <h2>{{node.title}}</h2>
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li>{{node.title}}</li>
+  </ul>
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron gray-border-top">
   <div class="container">
 
-    <div class="container" ng-bind-html="node.body.value"></div>
-    <div class="container">
-      <h4 class="text-center">Try it out</h4>
+    <div class="container"><div class="well" ng-bind-html="node.body.value"></div></div>
+    <div class="ipad-container">
+      <h3 class="text-center demo-head hidden-xs">
+        <i class="fa fa-thumbs-o-up"></i>Try it out
+      </h3>
+      <div class="text-center"><a ng-src="{{trustSrc(url)}}" class="btn-primary btn-lg btn visible-xs-inline-block">
+        <i class="fa fa-thumbs-o-up"></i>Try it out
+      </a></div>
       <div class="ipad-bg">
         <iframe ng-src="{{trustSrc(url)}}"></iframe>
       </div>
