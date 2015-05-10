@@ -1,3 +1,8 @@
+// helper hides content
+.hide-on-app {
+  display: none;
+}
+
 main {
   min-height: 100%;
 }
@@ -24,11 +29,6 @@ dl, ol, ul {
   }
 }
 
-.row {
-  max-width: inherit;
-}
-
-
 
 .header {
   color: $brand-primary;
@@ -53,7 +53,7 @@ dl, ol, ul {
     padding-top: 1.875rem;
     padding-bottom: .75rem;
     float: left;
-    margin-top: 39px;
+    margin-top: 31px;
     margin-right: 20px;
     padding-top: 0;
 
@@ -62,15 +62,99 @@ dl, ol, ul {
       content: "\e600";
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: $logo-size;
+      font-size: 40px;
     }
 
   }
 }
 
 
+// Page title region
+// -------------------------------------
+
+
+.heading {
+  h2 {
+    margin-top: 0px;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
+}
+
+.margin-top-none {
+  margin-top: 0;
+}
+
+.breadcrumb {
+  margin: 0 (-$breadcrumb-padding-horizontal) 10px;
+}
+
+.section-padding-top {
+  padding-top: 64px;
+}
+
+
+// Buttons region
+// -------------------------------------
+
+.btn-home{
+  margin-top: 40px;
+}
+
+.gray-bg.btns {
+  margin-top: 1em;
+  text-align: center;
+  padding: 20px 0;
+
+  .btn {
+    margin: 0 auto 20px;
+    @include button-variant($white, $gray-dark, $gray-darker);
+    text-transform: uppercase;
+    font-size: 1em;
+    border-radius: 4px;
+    font-family: $ff-alt;
+
+    &.btn-primary {
+      @include button-variant($white, $brand-primary, darken($brand-primary, 13.5%));
+    }
+  }
+}
+
+.jumbotron {
+  p {
+    font-size: inherit;
+  }
+}
+
+.gray-bg{
+  background: $gray-lightest;
+  margin-top: 50px;
+  padding-bottom: 40px;
+}
+
+.gray-dark-bg {
+  background: $gray-lighter;
+}
+
+.gray-border {
+  border-bottom: 1px solid $gray-lightish;
+}
+
+.gray-border-top {
+  border-top: 1px solid $gray-lightish;
+}
+
+
+// feature region
+// -------------------------------------
 
 .features {
+
+  h3 {
+    margin-top: 40px;
+  }
 
   .feature-icon {
     width: 100%;
@@ -85,14 +169,14 @@ dl, ol, ul {
     i {
       position: absolute;
       top: -20px;
-      left: 15%;
+      left: 50%;
+      margin-left: -30px;
       width: 60px;
       height: 40px;
       background: #fff;
       font-size: 40px;
       line-height: 40px;
       text-align: center;
-      margin: 0px auto;
       color: $brand-primary !important;
     }
 
@@ -100,50 +184,9 @@ dl, ol, ul {
   }
 }
 
-.btn-home{
-  margin-top: 40px;
-}
 
-.gray-bg.btns {
-  margin-top: 1em;
-  text-align: center;
-  padding: 20px 0;
-
-  .btn {
-    margin: 0 auto;
-    @include button-variant($white, $gray-dark, $gray-darker);
-    text-transform: uppercase;
-    font-size: 1.2em;
-    border-radius: 4px;
-    font-family: $ff-alt;
-    min-width: 230px;
-
-    &.btn-primary {
-      @include button-variant($white, $brand-primary, darken($brand-primary, 13.5%));
-    }
-  }
-}
-
-.jumbotron {
-  p {
-    font-size: inherit;
-  }
-}
-
-
-.gray-bg{
-  background: $gray-lightest;
-  margin-top: 40px;
-  padding-bottom: 40px;
-}
-
-.gray-dark-bg {
-  background: $gray-lighter;
-}
-
-.gray-border {
-  border-bottom: 1px solid $gray-lightish;
-}
+// premium apps
+// -------------------------------------
 
 .premium-apps {
   .well {
@@ -152,23 +195,45 @@ dl, ol, ul {
     cursor: pointer;
   }
 
+  .img {
+    display: block;
+    text-align: center;
+  }
+  
+
   img {
     margin-top: 10px;
+    max-width: 100%;
+    height: auto;
   }
 }
 
 
+
+
 .mailing-list {
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 40px;
 
   .form-inline .form-control {
-    margin-top: 10px;
 
     input[type="submit"] {
       border-radius: 4px !important;
     }
   }
 }
+
+// apps
+// -------------------------------------
+
+.app-icon {
+  background:#ccc;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+// apps list
 
 .apps {
 
@@ -179,39 +244,63 @@ dl, ol, ul {
   }
 
   .app-icon {
+    margin: 0px auto;
     width:80px;
     height:80px;
-    background:#ccc;
-    border-radius: 20px;
     font-size: 40px;
     line-height: 80px;
-    text-align: center;
-    color: #fff;
-    margin: 0px auto;
   }
 }
 
+// apps node 
 
+.app-node {
+  .app-icon {
+    width:60px;
+    height:60px;
+    font-size: 30px;
+    line-height: 60px;
+    float: left;
+    margin-right: 20px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+// Home page video
+// -------------------------------------
 
 .laptop-bg {
-  width: 1250px;
-  height: 756px;
-  background: url(../images/helm-main.png) center no-repeat;
-  background-size: contain;
-  padding-top: 100px;
-  padding-left: 352px;
   position: relative;
 
   .laptop-inner {
-    width: 730px;
-    height: 451px;
-    background: #fff;
+    max-width: 100%;
+    height: auto;
     background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 30px;
 
     video {
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+
+// My town + explore iframes
+// -------------------------------------
+
+.demo-head {
+  margin-top: 0;   
+  color:$brand-primary;
+}
+
+.text-center {
+  i {
+    margin-right: 0.3em;
   }
 }
 
@@ -230,14 +319,20 @@ dl, ol, ul {
   }
 }
 
+.ipad-container {
+  padding-top: 40px;
+}
+
 .ipad-bg {
-  width: 1270px;
+  width: 1130px;
   height: 880px;
   max-width: 100%;
-  background: url(../images/ipad.png) center no-repeat;
+  background: url(../images/ipad.png) left no-repeat;
   background-size: contain;
   padding-top: 105px;
-  padding-left: 109px;
+  padding-left: 120px;
+  margin-right: auto;
+  margin-left: auto;
 
   iframe {
     width: 894px;
@@ -270,3 +365,259 @@ iframe {
     width: 40%;
   }
 }*/
+
+// Footer area
+// ---------------------------
+
+.footer {
+  h2 {
+    margin-top: 60px;
+  }
+
+  .col-sm-9 {
+    margin-bottom: 30px;
+  }
+
+  .col-sm-3 {
+    padding-bottom: 40px;
+  }
+}
+
+
+// *
+// * Media Queries
+// *
+// ******************************************************
+
+@include  respond($xs-only) {
+
+  .header {
+
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  // apps list
+
+  .apps {
+    .col-xs-6:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+
+  // premium apps
+  // -------------------------------------
+
+  .premium-app-teaser {
+    h3 {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-top: -50px;
+    }
+  } 
+
+  .mailing-list .form-inline .form-control {
+    margin-bottom: 10px;
+  }
+
+
+  // My town + explore iframes
+  // -------------------------------------
+
+  .text-center .visible-xs-inline-block {
+    margin-bottom: 30px;
+  }
+
+  .iphone-bg {
+    display: none;
+  }
+
+  .ipad-bg {
+    display: none;
+  }
+
+
+  // Create form 
+  // ------------------------
+
+  .form-horizontal .col-sm-8 {
+    padding-left: $grid-gutter-width/2;
+    padding-right: $grid-gutter-width/2;
+  }
+}
+
+@include respond($sm-and-down) {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@include respond($sm-only) {
+
+  // Buttons region
+  // -------------------------------------
+    
+  .gray-bg.btns {
+
+    .col-md-4 {
+      &, * {
+        display: inline-block;
+      }
+    }
+  }
+
+  // feature region
+  // -------------------------------------
+
+  .features {
+    .col-sm-6:nth-child(2n + 1) {
+      clear: left;
+    }
+  }
+
+  // My town + explore iframes
+  // -------------------------------------
+
+  .iphone-bg {
+    margin: 0 auto 40px;
+  }
+
+}
+
+@include respond($sm-up) {
+
+  h1, .h1 { font-size: $font-size-h1-desktop; }
+  h2, .h2 { font-size: $font-size-h2-desktop; }
+  h3, .h3 { font-size: $font-size-h3-desktop; }
+  h4, .h4 { font-size: $font-size-h4-desktop; }
+
+  .header {
+
+    .logo {
+      margin-top: 39px;
+
+      &:before {
+        font-size: $logo-size;
+      }
+    }
+  }
+
+  // Buttons region
+  // -------------------------------------
+    
+  .gray-bg.btns {
+
+    .btn {
+      margin-bottom: 0;
+    }
+
+    .col-md-4 {
+      float: none;
+      min-width: 25%;
+      width: auto;
+
+      &, * {
+        display: inline-block;
+      }
+    }
+
+  }
+
+
+  // feature region
+  // -------------------------------------
+
+  .features {
+
+    .feature-icon {
+      width: 100%;
+      position: relative;
+      
+      .border {
+        border: 4px solid #ccc;
+        margin-top: 50px;
+        border-color: $brand-primary !important;
+      }
+
+      i {
+        margin-left: 0;
+        left: 15%;
+      }
+    }
+  }
+
+
+  // Create form 
+  // ------------------------
+
+  .form-horizontal .control-label {
+    text-align: left;
+  }
+}
+
+
+@include respond($md-and-down) {
+  .jumbotron > .container {
+    width: 100%;
+  }
+}
+
+
+@include respond($md-up) {
+
+  // Buttons region
+  // -------------------------------------
+    
+  .gray-bg.btns {
+
+    .btn {
+      min-width: 230px;
+      font-size: 1.2em;
+    }
+
+  }
+
+  // feature region
+  // -------------------------------------
+
+
+  .features {
+    .col-md-4:nth-child(3n + 1) {
+      clear: left;
+    }
+  }
+
+  // Home page video
+  // -------------------------------------
+
+  .laptop-bg {
+    width: 1250px;
+    height: 756px;
+    background: url(../images/helm-main.png) center no-repeat;
+    background-size: contain;
+    padding-top: 100px;
+    padding-left: 352px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+
+    .laptop-inner {
+      width: 730px;
+      height: 451px;
+      background: #fff;
+      background-size: cover;
+    }
+  }
+
+  // My town + explore iframes
+  // -------------------------------------
+  .jumbotron .col-md-7 .well {
+    margin-top: 50px;
+  }
+}

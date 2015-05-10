@@ -1,6 +1,14 @@
-<div class="container app-node">
+<div class="container heading">
+  <h2>Apps</h2>
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li>Apps</li>
+  </ul>
+</div>
 
-<a href="/" class="btn btn-default btn-sm right btn-home">&laquo; Back Home</a>
-<h2>{{node.title}}</h2>
-<div class="body col-md-8" ng-bind-html="node.body.value"></div>
+<div class="gray-border-top section-padding-top">
+  <div class="container app-node">
+    <h2 class="margin-top-none"><div class="app-icon" style="background-color: {{node.field_icon.color}};"><i class="fa {{node.field_icon.icon}}"></i></div>{{node.title}}</h2>
+    <div class="row"><div class="body col-md-8" ng-bind-html="node.body.value"></div></div>
+  </div>
 </div>

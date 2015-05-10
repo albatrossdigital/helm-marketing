@@ -68,4 +68,18 @@ angular.module('scrollTo', [])
       }
     }
   ]
-);
+)
+
+.directive('anchorScroll', function($rootScope, $timeout, $location) {
+  return {
+    restrict: 'A',
+    scope: {
+      anchorScroll: '@anchorScroll',
+    },
+    link: function($scope, $element, $attrs) {
+      $element.on('click', function(event) {
+        $rootScope.scrollTo($scope.anchorScroll);
+      });
+    }
+  }
+});
