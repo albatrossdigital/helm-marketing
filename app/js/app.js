@@ -29,7 +29,7 @@ angular.module('app', [
 			$rootScope.$stateParams = $stateParams;
 
       //$rootScope.pageUrl = 'http://localhost:9000';
-      $rootScope.apiUrl = 'http://helm-marketing.liftoff.albatrossdigital.com/';
+      $rootScope.apiUrl = 'http://helm-marketing.liftoff.space/';
       $rootScope.siteApiUrl = 'http://auth.liftoff.albatrossdigital.com/';
       $rootScope.siteApiKey = 'eL92a6GsS0pAQ5lzcxSEg8lGhYwAheoB';
       
