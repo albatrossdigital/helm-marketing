@@ -4804,6 +4804,9 @@ dl, ol, ul {
 .gray-border-top {
   border-top: 1px solid #ccc; }
 
+.home-video {
+  padding-top: 90px; }
+
 .features h3 {
   margin-top: 40px; }
 .features .feature-icon {
